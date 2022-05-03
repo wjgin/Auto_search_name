@@ -4,8 +4,8 @@ echo this is test...
 
 path=/Applications
 
-program=/Google\ Chrome.app
+program=Google\ Chrome.app
 
-open $path$program
+open "$path/$program"
 
 

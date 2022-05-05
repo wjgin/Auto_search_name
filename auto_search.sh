@@ -3,21 +3,20 @@
 
 echo this is test...
 
-#path=/Applications
-#program=Google\ Chrome.app
-#open "$path/$program
+# variable section
+KEY_WORD1="보드카페"
+KEY_WORD2="일산보드카페"
 
-query_name1="보드카페"
-query_name2="일산보드카페"
+KEY_WORD1_URL="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=$KEY_WORD1&oquery=&tqi=hFaMBdprvxsssTWhZJCssssstTo-188364"
+KEY_WORD2_URL="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=$KEY_WORD2&oquery=&tqi=hFaMBdprvxsssTWhZJCssssstTo-188364"
 
-query_result1="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=$query_name1&oquery=&tqi=hFaMBdprvxsssTWhZJCssssstTo-188364"
+PROGRAM_NAME="Safari"
+WAITTING_TIME=5	#sec
 
 
-query_result2="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=$query_name2&oquery=&tqi=hFaMBdprvxsssTWhZJCssssstTo-188364"
+# command section
+open $KEY_WORD1_URL $KEY_WORD2_URL
 
-open $query_result1 $query_result2
+sleep "$WAITTING_TIME"
 
-sleep 1	# sleep 5sec (default sec)
-
-pid="ps -Ac | grep -x 'Safari' | awk '{echo $1}'"
-
+killall -9 "$PROGRAM_NAME"

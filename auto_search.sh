@@ -16,3 +16,8 @@ query_result1="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexear
 query_result2="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=$query_name2&oquery=&tqi=hFaMBdprvxsssTWhZJCssssstTo-188364"
 
 open $query_result1 $query_result2
+
+sleep 1	# sleep 5sec (default sec)
+
+pid="ps -Ac | grep -x 'Safari' | awk '{echo $1}'"
+

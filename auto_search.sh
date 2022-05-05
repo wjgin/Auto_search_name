@@ -11,12 +11,14 @@ KEY_WORD1_URL="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexear
 KEY_WORD2_URL="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=$KEY_WORD2&oquery=&tqi=hFaMBdprvxsssTWhZJCssssstTo-188364"
 
 PROGRAM_NAME="Safari"
-WAITTING_TIME=5	#sec
-
+# PROGRAM_NAME="iexplore"
+WAITTING_TIME=10	#sec
+SET=$(seq 0 3)	# loop count setting
 
 # command section
-open $KEY_WORD1_URL $KEY_WORD2_URL
-
-sleep "$WAITTING_TIME"
-
-killall -9 "$PROGRAM_NAME"
+for i in $SET
+do
+	open $KEY_WORD1_URL $KEY_WORD2_URL
+	sleep "$WAITTING_TIME"
+	killall -9 "$PROGRAM_NAME"
+done

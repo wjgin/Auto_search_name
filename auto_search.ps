@@ -1,0 +1,13 @@
+# power shell
+
+# variable section
+$KEY_WORD1="보드카페"
+$KEY_WORD2="일산보드카페"
+$KEY_WORD1_URL="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=$KEY_WOR    D1&oquery=&tqi=hFaMBdprvxsssTWhZJCssssstTo-188364"
+$KEY_WORD2_URL="https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=$KEY_WOR    D2&oquery=&tqi=hFaMBdprvxsssTWhZJCssssstTo-188364"
+
+# $PROGRAM_NAME="Safari"
+$PROGRAM_NAME="iexplore"
+$WAITTING_TIME=10  #sec
+
+[system.Diagnostics.Process]::Start($PROGRAM_NAME, $KEY_WORD1_URL)

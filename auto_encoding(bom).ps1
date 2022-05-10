@@ -1,11 +1,16 @@
-# power shell
+﻿# power shell
 
 #enc
-#[System.Text.Encoding]::UTF8;
-#$env:LC_ALL='C.UTF-8';
+# save encoding uft8(bom) -> success
+
+#[System.Text.Encoding]::UTF8; # encoding fail
+#$PSDefaultParameterValues['*:Encoding'] = 'utf8'; # encoding fail
+#[System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8 # encoding fail
+
+#$env:LC_ALL='C.UTF-8';# encoding fail
 # variable section
-$KEY_WORD1=get-content -encoding utf8 "var1.txt";    # 보드게임카페
-$KEY_WORD2=get-content -encoding utf8 "var2.txt";    # 일산보드게임카페
+$KEY_WORD1="일산보드게임";
+$KEY_WORD2="일산보드게임카페";
 
 $KEY_WORD1_URL="https://search.naver.com/search.naver?query=$KEY_WORD1"
 $KEY_WORD2_URL="https://search.naver.com/search.naver?query=$KEY_WORD2"
@@ -13,8 +18,8 @@ $KEY_WORD2_URL="https://search.naver.com/search.naver?query=$KEY_WORD2"
 $KEY_WORD_MAP="https://map.naver.com/v5/entry/place/1733463308";
 
 $PROGRAM_NAME="iexplore"
-$WAITTING_TIME=10  #sec
-$LOOP_COUNT=2
+$WAITTING_TIME=3  #sec
+$LOOP_COUNT=1
 
 
 For ($i=1; $i -le $LOOP_COUNT; $i++) {  # loop
